@@ -26,8 +26,9 @@ SET time_zone = "+00:00";
 --
 -- Structure de la table `polls`
 --
-
-CREATE TABLE `polls` (
+CREATE DATABASE IF NOT EXISTS `poo_db`;
+USE `poo_db`;
+CREATE TABLE IF NOT EXISTS`polls` (
   `poll_id` int(11) NOT NULL,
   `poll_title` varchar(80) NOT NULL,
   `poll_answer1` varchar(20) NOT NULL,
@@ -44,7 +45,7 @@ CREATE TABLE `polls` (
 -- Structure de la table `users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXISTS `users` (
   `user_id` int(11) NOT NULL,
   `user_name` varchar(65) NOT NULL,
   `user_email` varchar(255) NOT NULL,

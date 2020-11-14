@@ -7,7 +7,7 @@
     --font-family    :  'Oswald', sans-serif;
     
 }
-form{
+form {
     -webkit-appearance: none;
     outline: none;
     border: 1px transparent;
@@ -19,30 +19,35 @@ form{
     margin: auto;
     min-height: 80vh;
 }
-form label{
+
+form label {
     -webkit-appearance: none;
     outline: none;
     border: 1px transparent;
-    padding:1rem 0rem;
-    font-size: 12px;
+    padding: .6rem 0rem;
+    font-size: 1.2rem;
     text-align: center;
+    font-weight: 200;
 }
-form input:not([type="submit"]){
+
+form input:not([type="submit"]) {
     -webkit-appearance: none;
     outline: none;
     border: 1px transparent;
-    padding:1rem 0rem;
+    padding: 1rem 0rem;
     text-align: center;
     border-radius: 20px;
     margin: 2rem 0;
     background-color: var(--old-rose) !important;
 }
-form input:hover, form input:focus{
+
+form input:hover, form input:focus {
     outline: none;
     background-color: var(--champagne-pink);
-    border:1px solid black;
+    border: 1px solid black;
 }
-form input[type="submit"]{
+
+form input[type="submit"] {
     /* border-radius: 20px; */
     border: 1px transparent;
     margin: 1rem auto;
@@ -52,24 +57,27 @@ form input[type="submit"]{
     background-color: var(--french-lilac);
     color: white !important;
 }
-form input[type="submit"]:hover{ 
+
+form input[type="submit"]:hover {
     transition: .4s;
     border-radius: 20px;
     background-color: var(--mellow-abricot);
     color: white !important;
 }
-form input[type="submit"]:not(:hover){ 
+
+form input[type="submit"]:not(:hover) {
     transition: .4s;
     border-radius: 0px;
     color: white !important;
- 
 }
+
 input:-internal-autofill-selected {
     background-color: red !important;
     color: white !important;
     -webkit-appearance: none;
 }
-input, select, textarea{
+
+input, select, textarea {
     color: var(--champagne-pink);
 }
 

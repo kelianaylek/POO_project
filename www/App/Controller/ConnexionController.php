@@ -8,10 +8,14 @@ class ConnexionController{
     }
 
     public function render(){
-        $connexions = $this->model->query("SELECT * FROM users");
+        $c = $this->model->query("SELECT * FROM users where user_name ='timogo'");
         require ROOT."/App/View/ConnexionView.php";
     }
+    public function redirect(){
+        header("www.googme.com");
+    }
 }
+
 
 
 ?>

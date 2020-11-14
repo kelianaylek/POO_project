@@ -22,7 +22,7 @@ class Database{
         try {
             require "Config/_config.php";
 
-            $this->host = $dbConfig["host"];
+            $this->host   = $dbConfig["host"];
             $this->dbname = $dbConfig["dbname"];
             $this->dbuser = $dbConfig["dbuser"];
             $this->dbpass = $dbConfig["dbpass"];
@@ -32,15 +32,16 @@ class Database{
         }
     }
 
-    public function query($statement, $one = false)
+    public function query($statement) //, $one = false)
     {
         $query = $this->pdo->query($statement);
 
-        if($one){
+        // if($one){
             return $query->fetch(\PDO::FETCH_OBJ);
-        } else {
-            return $query->fetchAll(\PDO::FETCH_OBJ);
-        }
+        // }
+        //  else {
+        //     return $query->fetchAll(\PDO::FETCH_OBJ);
+        // }
     }
 
     public function prepare($statement, $data = array())

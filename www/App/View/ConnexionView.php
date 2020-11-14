@@ -12,7 +12,7 @@
 <body>
     <div class="wrapper">
         <h1>Ecran de connexion</h1>
-        <form action= <?= ROOT."/app/Controller/ConnexionControler" ; ?> method="POST">
+        <form action= <?= ROOT."/app/Controller/ConnexionControler?f" ; ?> method="POST">
         <!-- mail -->
         <label for="mail">Votre mail</label>    
         <input type="mail" name="mail">
@@ -23,6 +23,11 @@
         <input type="submit" name="submit" value="Se connecter" />
     
     </form>
+    <?php 
+  echo "<h2>". $c->user_name . "</h2>";
+    ?>
+
+    
     </div>
 </body>
 </html>

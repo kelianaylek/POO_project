@@ -8,7 +8,7 @@ class ConnexionController{
     }
 
     public function render(){
-        $connexions = $this->model->query("SELECT * FROM Connexions");
+        $connexions = $this->model->query("SELECT * FROM users");
         require ROOT."/App/View/ConnexionView.php";
     }
 }

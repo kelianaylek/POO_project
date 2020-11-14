@@ -20,7 +20,7 @@ class Database{
     public function __construct()
     {
         try {
-            require "Config/config.php";
+            require "Config/_config.php";
 
             $this->host = $dbConfig["host"];
             $this->dbname = $dbConfig["dbname"];

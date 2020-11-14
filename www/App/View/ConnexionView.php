@@ -12,7 +12,7 @@
 <body>
     <div class="wrapper">
         <h1>Ecran de connexion</h1>
-        <form action= <?= ROOT."/app/Controller/ConnexionControler?f" ; ?> method="POST">
+        <form action= <?= ROOT."/app/Controller/ConnexionControler" ; ?> method="POST">
         <!-- mail -->
         <label for="mail">Votre mail</label>    
         <input type="mail" name="mail">

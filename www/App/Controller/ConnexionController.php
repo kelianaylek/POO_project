@@ -11,9 +11,7 @@ class ConnexionController{
         $c = $this->model->query("SELECT * FROM users where user_name ='timogo'");
         require ROOT."/App/View/ConnexionView.php";
     }
-    public function redirect(){
-        header("www.googme.com");
-    }
+
 }
 
 

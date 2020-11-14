@@ -1,5 +1,26 @@
+@import 'form.css';
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+:root{
+    --french-lilac   :#966B9D;
+    --old-rose       :#C98686;
+    --mellow-abricot :#F2B880;
+    --sea-shell      :#FFF4EC;
+    --champagne-pink :#E7CFBC;
+    --font-family    :  'Oswald', sans-serif;
+    
+}
+body{
+    font-size :10px;
+    font-family: var(--font-family);
+
+}
+h1{
+    text-align: center;
+    margin-top: 4rem;
+    font-family: var(--font-family);
+    font-weight: 300;
 }

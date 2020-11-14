@@ -6,9 +6,12 @@ use App\Model\ConnexionModel;
 if (array_key_exists("page", $_GET)) {
 
     switch ($_GET["page"]) {
-        case 'orders':
+        case 'connexion':
             $controller = new ConnexionController();
             break;
+        case 'kaka':
+            $controller = new ConnexionController();
+            echo "kaka";
 
         default:
             # code...

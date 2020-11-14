@@ -1,0 +1,78 @@
+:root{
+    --french-lilac   :#966B9D;
+    --old-rose       :#C98686;
+    --mellow-abricot :#F2B880;
+    --sea-shell      :#FFF4EC;
+    --champagne-pink :#E7CFBC;
+    --font-family    :  'Oswald', sans-serif;
+    
+}
+form{
+    -webkit-appearance: none;
+    outline: none;
+    border: 1px transparent;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    min-height: 80vh;
+}
+form label{
+    -webkit-appearance: none;
+    outline: none;
+    border: 1px transparent;
+    padding:1rem 0rem;
+    font-size: 12px;
+    text-align: center;
+}
+form input:not([type="submit"]){
+    -webkit-appearance: none;
+    outline: none;
+    border: 1px transparent;
+    padding:1rem 0rem;
+    text-align: center;
+    border-radius: 20px;
+    margin: 2rem 0;
+    background-color: var(--old-rose) !important;
+}
+form input:hover, form input:focus{
+    outline: none;
+    background-color: var(--champagne-pink);
+    border:1px solid black;
+}
+form input[type="submit"]{
+    /* border-radius: 20px; */
+    border: 1px transparent;
+    margin: 1rem auto;
+    padding: 1rem;
+    width: 15%;
+    outline: none;
+    background-color: var(--french-lilac);
+    color: white !important;
+}
+form input[type="submit"]:hover{ 
+    transition: .4s;
+    border-radius: 20px;
+    background-color: var(--mellow-abricot);
+    color: white !important;
+}
+form input[type="submit"]:not(:hover){ 
+    transition: .4s;
+    border-radius: 0px;
+    color: white !important;
+ 
+}
+input:-internal-autofill-selected {
+    background-color: red !important;
+    color: white !important;
+    -webkit-appearance: none;
+}
+input, select, textarea{
+    color: var(--champagne-pink);
+}
+
+textarea:focus, input:focus {
+    color: var(--champagne-pink);
+}

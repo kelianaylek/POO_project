@@ -2,6 +2,7 @@
 
 use App\Controller\ConnexionController;
 use App\Model\ConnexionModel;
+use App\Controller\SendMailController;
 
 if (array_key_exists("page", $_GET)) {
 
@@ -9,9 +10,6 @@ if (array_key_exists("page", $_GET)) {
         case 'connexion':
             $controller = new ConnexionController();
             break;
-        case 'kaka':
-            $controller = new ConnexionController();
-            echo "kaka";
 
         default:
             # code...

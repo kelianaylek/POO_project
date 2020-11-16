@@ -14,22 +14,36 @@ class PollModel extends Database{
 
     function createPoll(){
         // On vérifie le contenu des données
+        // $pollArray = [
+        // $pollTitle->$_POST["poll_title"], 
+        // $pollAnswer1-> $_POST["poll_answer1"], 
+        // $pollAnswer2->$_POST["poll_answer2"], 
+        // $pollLimit->$_POST["poll_answer1"]
+        // ];
+
+        // $pollArray->pollTitle = htmlspecialchars($pollTitle);
+        // $pollArray->pollAnswer1 = htmlspecialchars($pollAnswer1);
+        // $pollArray->pollAnswer2 = htmlspecialchars($pollAnswer2);
+        // $pollArray->pollTitle = htmlspecialchars($pollLimit);
+
         $pollArray = [
-        $pollTitle->$_POST[poll_title], 
-        $pollAnswer1-> $_POST[poll_answer1], 
-        $pollAnswer2->$_POST[poll_answer2], 
-        $pollLimit->$_POST[poll_answer1]
+        $pollTitle => $_POST["poll_title"],
+        $pollAnswer1 => $_POST["poll_answer1"],
+        $pollAnswer2 => $_POST["poll_answer2"],
+        $pollLimit => $_POST["poll_limit"]
         ];
 
-        $pollArray->pollTitle = htmlspecialchars($pollTitle);
-        $pollArray->pollAnswer1 = htmlspecialchars($pollAnswer1);
-        $pollArray->pollAnswer2 = htmlspecialchars($pollAnswer2);
-        $pollArray->pollTitle = htmlspecialchars($pollLimit);
 
         // On prépare la requête
         $poll = $this->pdo->prepare("INSERT INTO polls(poll_title, poll_answer1, poll_answer2, poll_limit) 
-        VALUES ('$_POST[poll_title]','$_POST[poll_answer1]','$_POST[poll_answer2]','$_POST[poll_limit];')");
+        VALUES ('$pollArray[$pollTitle]','$pollArray[$pollAnswer1]','$pollArray[$pollAnswer2]','$pollArray[$pollLimit]')");
         $poll->execute();
+        $poll->fetch();
     }
 
 }
+
+
+// $poll = $this->pdo->prepare("INSERT INTO polls(poll_title, poll_answer1, poll_answer2, poll_limit) 
+//         VALUES ('$_POST[poll_title]','$_POST[poll_answer1]','$_POST[poll_answer2]','$_POST[poll_limit];')");
+//         $poll->execute();

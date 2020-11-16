@@ -1,5 +1,7 @@
 <?php
-define("ROOT", dirname(__DIR__));
+
+use App\Model\PollModel;
+
 
 ?>
 
@@ -28,10 +30,16 @@ define("ROOT", dirname(__DIR__));
             <option value="60">1 heure</option>
         </select>
 
-        <!-- Bouton d'envoie du formulaire -->
+        <!-- Bouton d'envoie du formulaire  -->
         <input type="submit" placehoder="Créer le sondage">
         
-    </form>
+    </form> 
+
+    
+    <?php
+    var_dump($polls);
+
+    ?>
 
 
 

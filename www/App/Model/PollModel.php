@@ -3,6 +3,7 @@ namespace App\Model;
 
 use Core\Database;
 
+
 // Utiliser htmlspecialchars pour sécurité, converti les caractères spéciaux
 
 // $_SESSION pour savoir si user est connecté etc
@@ -26,19 +27,19 @@ class PollModel extends Database{
         // $pollArray->pollAnswer2 = htmlspecialchars($pollAnswer2);
         // $pollArray->pollTitle = htmlspecialchars($pollLimit);
 
-        $pollArray = [
-        $pollTitle => $_POST["poll_title"],
-        $pollAnswer1 => $_POST["poll_answer1"],
-        $pollAnswer2 => $_POST["poll_answer2"],
-        $pollLimit => $_POST["poll_limit"]
-        ];
-
-
+        
+        $pollTitle = $_SESSION['poll_title'];
+        $pollAnswer1 = $_SESSION['poll_answer1'];
+        $pollAnswer2 = $_SESSION['poll_answer2'];
+        $pollLimit = $_SESSION['poll_limit'];
+        
         // On prépare la requête
         $poll = $this->pdo->prepare("INSERT INTO polls(poll_title, poll_answer1, poll_answer2, poll_limit) 
-        VALUES ('$pollArray[$pollTitle]','$pollArray[$pollAnswer1]','$pollArray[$pollAnswer2]','$pollArray[$pollLimit]')");
+        VALUES ('$pollTitle','$pollAnswer1','$pollAnswer2','$pollLimit')");
         $poll->execute();
-        $poll->fetch();
+        // $poll->fetch();
+
+        prepare($statement, $data = array());
     }
 
 }

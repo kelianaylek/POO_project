@@ -22,7 +22,6 @@ class PollController{
 
         $this->model->createPoll();
 
-        // var_dump($pollTitle);
 
     }
 

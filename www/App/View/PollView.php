@@ -39,6 +39,17 @@ use App\Model\PollModel;
     <?php
     var_dump($polls);
 
+    session_start();
+
+    if(isset($_POST["poll_title"]) && isset($_POST["poll_answer1"]) && isset($_POST["poll_answer2"]) && isset($_POST["poll_limit"])){
+        $_SESSION['poll_title'] = $_POST["poll_title"];
+        $_SESSION['poll_answer1'] = $_POST["poll_answer1"];
+        $_SESSION['poll_answer2'] = $_POST["poll_answer2"];
+        $_SESSION['poll_limit'] = $_POST["poll_limit"];
+    }
+    
+
+
     ?>
 
 

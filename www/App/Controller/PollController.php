@@ -16,7 +16,7 @@ class PollController{
 
     public function render(){
 
-        $polls = $this->model->query("SELECT `poll_id`, `poll_title`, `poll_answer1`, `poll_answer2`, `poll_link`, `poll_top_percent`, `created_at`, `poll_limit` FROM `poo_db`.`polls`");
+        $polls = $this->model->query("SELECT `poll_id`, `poll_title`, `poll_answer1`, `poll_answer2` FROM `poo_db`.`polls`");
 
         require ROOT."\App\View\PollView.php";
 

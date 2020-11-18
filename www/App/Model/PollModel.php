@@ -28,14 +28,14 @@ class PollModel extends Database{
         // $pollArray->pollTitle = htmlspecialchars($pollLimit);
 
         
-        $pollTitle = $_SESSION['poll_title'];
+        /*$pollTitle = $_SESSION['poll_title'];
         $pollAnswer1 = $_SESSION['poll_answer1'];
         $pollAnswer2 = $_SESSION['poll_answer2'];
-        $pollLimit = $_SESSION['poll_limit'];
+        $pollLimit = $_SESSION['poll_limit'];*/
         
         // On prépare la requête
         $poll = $this->pdo->prepare("INSERT INTO polls(poll_title, poll_answer1, poll_answer2, poll_limit) 
-        VALUES ('$pollTitle','$pollAnswer1','$pollAnswer2','$pollLimit')");
+        VALUES (?,?,?,?)");
         $poll->execute();
         // $poll->fetch();
 

@@ -39,7 +39,9 @@ class PollModel extends Database{
         $poll->execute();
         // $poll->fetch();
 
-        prepare($statement, $data = array());
+        // prepare($statement, $data = array());
+
+
     }
 
 }

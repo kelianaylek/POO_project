@@ -19,14 +19,13 @@ class PollController{
         // $polls = $this->model->query("SELECT `poll_id`, `poll_title`, `poll_answer1`, `poll_answer2` FROM `poo_db`.`polls`");
         $this->model->createPoll();
 
-        require ROOT."\App\View\PollView.php";
-
+        require ROOT."/App/View/PollView.php";
+        
 
 
     }
 
 }
 
-
-
+echo "test";
 ?>

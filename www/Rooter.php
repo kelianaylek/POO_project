@@ -8,6 +8,8 @@ if (array_key_exists("page", $_GET)) {
     switch ($_GET["page"]) {
         case 'connexion':
             $controller = new ConnexionController();
+            $controller->render();
+
             break;
         case 'poll':
             $controller = new PollController();

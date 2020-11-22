@@ -29,12 +29,12 @@
         <input type="text" name="poll_answer1" placeholder="Choix numéro 1">
         <input type="text" name="poll_answer2" placeholder="Choix numéro 2">
 
-        <!-- <select name="poll_limit">
+        <select name="poll_limit">
             <option value="5">5 minutes</option>
             <option value="15">15 minutes</option>
             <option value="30">30 minutes</option>
             <option value="60">1 heure</option>
-        </select> -->
+        </select>
 
         <!-- Bouton d'envoie du formulaire  -->
         <input name="test" type="submit" placehoder="Créer le sondage">

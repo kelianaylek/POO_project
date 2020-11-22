@@ -16,9 +16,9 @@ class PollModel extends Database{
     function createPoll(){
         if(isset($_POST["test"])){
       // On prépare la requête
-      $poll = $this->pdo->prepare("INSERT INTO polls (poll_title, poll_answer1, poll_answer2) 
-      VALUES (?,?,?)");
-      $poll->execute(array($_POST['poll_title'],$_POST['poll_answer1'],$_POST['poll_answer2']));
+      $poll = $this->pdo->prepare("INSERT INTO polls (poll_title, poll_answer1, poll_answer2, poll_limit) 
+      VALUES (?,?,?,?)");
+      $poll->execute(array($_POST['poll_title'],$_POST['poll_answer1'],$_POST['poll_answer2'],$_POST['poll_limit']));
 
       // $poll->fetch();
       // prepare($statement, $data = array());

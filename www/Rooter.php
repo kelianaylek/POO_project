@@ -1,7 +1,7 @@
 <?php
 
 use App\Controller\ConnexionController;
-use App\Controller\PollController;
+use App\Controller\CreatePollController;
 
 if (array_key_exists("page", $_GET)) {
 
@@ -11,11 +11,16 @@ if (array_key_exists("page", $_GET)) {
             $controller->render();
 
             break;
-        case 'poll':
-            $controller = new PollController();
+        case 'createPoll':
+            $controller = new CreatePollController();
             $controller->render();
+            break;
+
+        case 'createdPoll':
+            $controller = new CreatedPollController();
+            $controller->render();                
+            break;
     }
 } else {
     $controller = new ConnexionController();
 }
-// $controller->render();

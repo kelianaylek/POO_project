@@ -1,18 +1,3 @@
-<?php
-
-// $bdd = new PDO("mysql:host=localhost:3306;dbname=poo_db","root","");
-// if(isset($_POST["test"])){
-//     // On prépare la requête
-//     $poll = $bdd->prepare("INSERT INTO polls (poll_title, poll_answer1, poll_answer2, poll_limit) 
-//     VALUES (?,?,?,?)");
-//     $poll->execute(array($_POST['poll_title'],$_POST['poll_answer1'],$_POST['poll_answer2'],$_POST['poll_limit']));
-
-//     }
-
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -33,7 +18,8 @@
             <option value="5">5 minutes</option>
             <option value="15">15 minutes</option>
             <option value="30">30 minutes</option>
-            <option value="60">1 heure</option>
+            <option value="45">45 minutes</option>
+            <option value="60">60 minutes</option>
         </select>
 
         <!-- Bouton d'envoie du formulaire  -->
@@ -41,23 +27,6 @@
         
     </form> 
 
-    
-    <?php
-    // var_dump($polls);
-
-    // session_start();
-
-    // if(isset($_POST["poll_title"]) && isset($_POST["poll_answer1"]) && isset($_POST["poll_answer2"]) && isset($_POST["poll_limit"])){
-        // $_SESSION['poll_title'] ;
-        // $_SESSION['poll_answer1'] ;
-        // $_SESSION['poll_answer2'] ;
-        // $_SESSION['poll_limit'] ;
-      
-    // }
-    
-
-
-    ?>
 
 
 

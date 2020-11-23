@@ -11,22 +11,27 @@ use Core\Database;
 // \session_destroy pour suppr la session en cas de deco
 
 
-class PollModel extends Database{
+class CreatePollModel extends Database{
 
     function createPoll(){
         if(isset($_POST["test"])){
       // On prépare la requête
       $poll = $this->pdo->prepare("INSERT INTO polls (poll_title, poll_answer1, poll_answer2, poll_limit) 
       VALUES (?,?,?,?)");
+    //   Insertion des données dans la table polls de la bdd
       $poll->execute(array($_POST['poll_title'],$_POST['poll_answer1'],$_POST['poll_answer2'],$_POST['poll_limit']));
 
-      // $poll->fetch();
-      // prepare($statement, $data = array());
+
+        // Redirection vers la page du poll créé avec les réponses en temps réél
+        // require ROOT."/App/View/CreatedPollView.php";
+
+        ob_start();
+        header("Location: index.php?page=createdPoll");
+        exit();
+        ob_end_flush();
+        // require ROOT."\public\index.php?page=createdPoll";
+
+
         }
     }
 }
-
-
-// $poll = $this->pdo->prepare("INSERT INTO polls(poll_title, poll_answer1, poll_answer2, poll_limit) 
-//         VALUES ('$_POST[poll_title]','$_POST[poll_answer1]','$_POST[poll_answer2]','$_POST[poll_limit];')");
-//         $poll->execute();

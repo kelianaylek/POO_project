@@ -14,7 +14,7 @@ use Core\Database;
 class CreatePollModel extends Database{
 
     function createPoll(){
-        if(isset($_POST["test"])){
+        if(isset($_POST["sendPollToDb"])){
       // On prépare la requête
       $poll = $this->pdo->prepare("INSERT INTO polls (poll_title, poll_answer1, poll_answer2, poll_limit) 
       VALUES (?,?,?,?)");
@@ -23,15 +23,7 @@ class CreatePollModel extends Database{
 
 
         // Redirection vers la page du poll créé avec les réponses en temps réél
-        // require ROOT."/App/View/CreatedPollView.php";
-
-        ob_start();
-        header("Location: index.php?page=createdPoll");
-        exit();
-        ob_end_flush();
-        // require ROOT."\public\index.php?page=createdPoll";
-
-
+        require ROOT."/App/View/CreatedPollView.php";
         }
     }
 }

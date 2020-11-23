@@ -11,11 +11,11 @@ class CreatePollController{
 
     public function render(){
         require ROOT."/App/View/CreatePollView.php";
-        
+
         $this->model->createPoll();
     }
 
-    
+
 
 
 }

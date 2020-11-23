@@ -10,9 +10,11 @@ class CreatedPollController{
     }
 
     public function render(){
+        
         require ROOT."/App/View/CreatedPollView.php";
         
-        // $this->model->createPoll();
+        $this->model->getAllPolls();
+        
     }
 
     

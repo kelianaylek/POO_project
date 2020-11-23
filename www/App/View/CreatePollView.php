@@ -8,6 +8,8 @@
 <body>
 
     <!-- formulaire de création du sondage -->
+<h1>Créer un nouveau sondage</h1>
+
     <form method="POST">
 
         <input type="text" name="poll_title" placeholder="Choisir une question">
@@ -23,7 +25,7 @@
         </select>
 
         <!-- Bouton d'envoie du formulaire  -->
-        <input name="test" type="submit" placehoder="Créer le sondage">
+        <input name="sendPollToDb" type="submit" placehoder="Créer le sondage">
         
     </form> 
 

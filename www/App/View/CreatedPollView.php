@@ -21,10 +21,24 @@
         </thead>
         <tbody>
          
-       <?php
+       
 
-       var_dump($polls)
-       ?>
+    <pre>
+    <?php
+    var_dump($AllPolls);
+    ?>
+    </pre>
+    <?php
+    foreach($AllPolls as $poll) : ?>
+        <tr>
+            <td><?= $poll->poll_title ?></td>
+            <td><?= $poll->poll_answer1 ?></td>
+            <td><?= $poll->poll_answer2 ?></td>
+            <td><?= $poll->poll_limit ?></td>
+
+        </tr>
+    <?php endforeach; ?>
+    
 
 
 

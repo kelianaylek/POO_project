@@ -23,7 +23,10 @@ class CreatePollModel extends Database{
 
 
         // Redirection vers la page du poll créé avec les réponses en temps réél
-        require ROOT."/App/View/CreatedPollView.php";
+        // require ROOT."/App/View/CreatedPollView.php";
+
+        // header("Location : ");
+        // Exit();
         }
     }
 }

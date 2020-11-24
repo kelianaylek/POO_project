@@ -10,7 +10,10 @@ class CreatedPollController{
     }
 
     public function render(){
-        $this->model->getAllPolls();
+       // $this->model->getAllPolls();
+        $this->model->getLastPoll();
+        
+
         
         
     }

@@ -20,12 +20,23 @@ class CreatePollModel extends Database{
       VALUES (?,?,?,?)");
     //   Insertion des données dans la table polls de la bdd
       $poll->execute(array($_POST['poll_title'],$_POST['poll_answer1'],$_POST['poll_answer2'],$_POST['poll_limit']));
-
+     
+     
+     
+      $pollid = $_POST['poll_id'];
+      //header('Location:update_lbctn.php?order='.urlencode($current_id['id']));
+      header('Location: index.php?page=createdPoll&'.$pollid['id']);
+      echo("test");
         // echo();
+        //header("Location: index.php?page=createdPoll");
 
-        header("Location: index.php?page=createdPoll");
 
 
+
+        }
+        
+        function redirection() {
+         
         }
     }
 }

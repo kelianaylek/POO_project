@@ -7,9 +7,9 @@
 </head>
 <body>
     
-<h1>Titre du sondage :</h1>
 
 <hr>
+
 <table>
         <thead>
             <tr>
@@ -27,9 +27,10 @@
     <?php
     // var_dump($AllPolls);
     ?>
+    
     </pre>
     <?php
-    foreach($AllPolls as $poll) : ?>
+    foreach($LastPoll as $poll) : ?>
         <tr>
             <td><?= $poll->poll_title ?></td>
             <td><?= $poll->poll_answer1 ?></td>

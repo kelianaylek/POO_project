@@ -21,12 +21,11 @@ class CreatePollModel extends Database{
     //   Insertion des données dans la table polls de la bdd
       $poll->execute(array($_POST['poll_title'],$_POST['poll_answer1'],$_POST['poll_answer2'],$_POST['poll_limit']));
 
+        // echo();
 
-        // Redirection vers la page du poll créé avec les réponses en temps réél
-        require ROOT."/App/View/CreatedPollView.php";
+        header("Location: index.php?page=createdPoll");
 
-        // header("Location : ");
-        // Exit();
+
         }
     }
 }

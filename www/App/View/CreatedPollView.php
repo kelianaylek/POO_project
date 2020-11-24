@@ -25,7 +25,7 @@
 
     <pre>
     <?php
-    var_dump($AllPolls);
+    // var_dump($AllPolls);
     ?>
     </pre>
     <?php

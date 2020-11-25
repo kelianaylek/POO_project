@@ -12,7 +12,7 @@
 <body>
     <div class="wrapper">
         <h1>Ecran de connexion</h1>
-        <form action= <?= ROOT."/app/Controller/ConnexionControler" ; ?> method="POST">
+        <form method="POST">
         <!-- mail -->
         <label for="mail">Votre mail</label>    
         <input type="mail" name="mail">
@@ -20,7 +20,7 @@
         <label for="pass">Votre password</label>    
         <input type="password" name="pass">
 
-        <input type="submit" name="submit" value="Se connecter" />
+        <input type="submit" name="submit_connexion" value="Se connecter" />
     
     </form>
     <?php 

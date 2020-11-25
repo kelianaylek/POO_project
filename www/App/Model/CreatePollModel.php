@@ -18,7 +18,7 @@ class CreatePollModel extends Database{
       $pollid = $this->query("SELECT poll_id FROM polls ORDER BY poll_id DESC LIMIT 1 ");
       $pollidarray = $pollid[0]->poll_id;
 
-      header("Location: index.php?page=createdPoll&pollId=$pollidarray");
+      header("Location: index.php?page=createdPoll&poll_id=$pollidarray");
         }
   
     }

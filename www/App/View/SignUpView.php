@@ -17,7 +17,7 @@
         <input type="text" name="username">
         <!-- mail -->
         <label for="mail">Votre mail</label>    
-        <input type="mail" name="mail">
+        <input type="email" name="mail">
         <!-- password -->
         <label for="pass">Votre password</label>    
         <input type="password" name="pass">

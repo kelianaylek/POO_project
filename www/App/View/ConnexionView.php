@@ -23,10 +23,9 @@
         <input type="submit" name="submit_connexion" value="Se connecter" />
     
     </form>
-    <?php 
-  echo "<h2>". $c->user_name . "</h2>";
-    ?>
-
+<?php
+var_dump($signIn);
+?>
     
     </div>
 </body>

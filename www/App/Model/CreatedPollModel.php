@@ -20,11 +20,6 @@ class CreatedPollModel extends Database{
     }
     public function getLastPoll() {
         $LastPoll = $this->query("SELECT * FROM polls ORDER BY poll_id DESC LIMIT 1 ");
-        // $LastPoll = $this->pdo->prepare("SELECT * FROM polls ORDER BY poll_id DESC LIMIT 1");
-        // $LastPoll->execute();
-         //$objectLastPoll = $LastPoll->fetch();
-
-        //  juste pour regarder la gueule du tableau
        
         require ROOT."/App/View/CreatedPollView.php";
     }

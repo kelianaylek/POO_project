@@ -3,14 +3,6 @@ namespace App\Model;
 
 use Core\Database;
 
-
-// Utiliser htmlspecialchars pour sécurité, converti les caractères spéciaux
-
-// $_SESSION pour savoir si user est connecté etc
-// il faut avoir \session_start sur index.php
-// \session_destroy pour suppr la session en cas de deco
-
-
 class CreatePollModel extends Database{
 
     function createPoll(){
@@ -27,15 +19,7 @@ class CreatePollModel extends Database{
       $pollidarray = $pollid[0]->poll_id;
 
       header("Location: index.php?page=createdPoll&pollId=$pollidarray");
-
-
-
-        // echo();
-        //header("Location: index.php?page=createdPoll");
         }
-        
-        // function redirection() {
-         
-        // }
+  
     }
 }

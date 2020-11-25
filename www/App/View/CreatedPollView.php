@@ -8,7 +8,6 @@
 <body>
     
 
-<hr>
 
 <table>
         <thead>
@@ -25,7 +24,8 @@
 
     <pre>
     <?php
-    // var_dump($AllPolls);
+  
+
     ?>
     
     </pre>
@@ -39,6 +39,9 @@
 
         </tr>
     <?php endforeach; ?>
+
+    
+
     
 
 

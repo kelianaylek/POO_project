@@ -24,7 +24,8 @@ class CreatedPollModel extends Database{
         // $LastPoll->execute();
          //$objectLastPoll = $LastPoll->fetch();
 
-
+        //  juste pour regarder la gueule du tableau
+       
         require ROOT."/App/View/CreatedPollView.php";
     }
 }

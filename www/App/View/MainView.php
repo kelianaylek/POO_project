@@ -9,6 +9,7 @@
 
 <!-- Afficher le user name -->
 <h1>Bienvenue <?php echo($user[0]->user_name)?></h1>
+<!-- <h1>Bienvenue <?php echo($_SESSION["user_name"])?></h1> -->
 
 <a href="?page=deconnexion">Se deconnecter</a>
 

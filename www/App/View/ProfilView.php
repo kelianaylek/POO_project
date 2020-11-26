@@ -12,13 +12,15 @@
 <body>
     <div class="wrapper">
         <h1>Changez vos informations</h1>
-        <form action="">
+        <form action="" method="POST">
             <label for="username">New username</label>
-            <input type="text" name="newUsername" placeholder="Username">
+            <input type="text" name="newUsername" placeholder="<?=$user[0]->user_name;?>">
             <label for="password">New mdp</label>
-            <input type="password" name="newPassword" placeholder="Mot de passe">
+            <input type="password" name="newPassword">
             <label for="confirmPassword">Confirm new mdp</label>
-            <input type="password" name="newPasswordConfirmed" placeholder="Confirmez mot de passe">
+            <input type="password" name="newPasswordConfirmed" >
+
+            <button type="submit" name="submitProfilChanges">Valider</button>
         </form>
     
     </div>

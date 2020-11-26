@@ -18,12 +18,11 @@ class ConnexionController{
                     $reqLogin = $this->model->login($mailConnect, $passwordConnect);
                     $reqLoginCount = count($reqLogin);
                     if($reqLoginCount >= 1){
-                        session_start();
                         $_SESSION['id'] = $reqLogin[0]->user_id;
                         $_SESSION['user_name'] = $reqLogin[0]->user_name;
                         $_SESSION['user_mail'] = $reqLogin[0]->user_email;
 
-                        // header("Location: ../index.html");
+                        header("Location: ../public/index.php?page=main");
                     }else{
                         echo('Echec de la connexion');
                     }
@@ -36,10 +35,15 @@ class ConnexionController{
         }
         require ROOT."/App/View/ConnexionView.php";
         }
+   
+
+    public function deconnexion(){
+        session_destroy();
+        require ROOT."/App/View/DeconnexionView.php";
     }
 
     
-
+}
 
 
 ?>

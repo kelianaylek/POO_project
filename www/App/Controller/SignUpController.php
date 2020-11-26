@@ -20,7 +20,7 @@ class SignUpController{
                     if(!empty($userPassword)){
                         if($userPassword == $userPasswordConfirmed){
                             $this->model->reqCreateAccount($userName, $userMail, $userPassword);
-                            // header("Location: ../public/index.html?page=connexion");
+                            header("Location: ../public/index.php?page=connexion");
 
                         }else{
                             echo('password pas pareil');

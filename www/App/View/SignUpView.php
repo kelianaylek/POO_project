@@ -27,9 +27,10 @@
         <input type="submit" name="submit_signUp" value="Se connecter" />
     
     </form>
-    <?php 
-    ?>
+ 
 
+    <p>Already have an account ?</p>
+    <a href="../public/index.php?page=connexion">Se connecter</a>
     
     </div>
 </body>

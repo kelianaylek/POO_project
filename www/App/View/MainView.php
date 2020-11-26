@@ -8,12 +8,9 @@
 <body>
 
 <!-- Afficher le user name -->
-
-
 <h1>Bienvenue <?php echo($user[0]->user_name)?></h1>
 
 <a href="?page=deconnexion">Se deconnecter</a>
-
 
 <button>Modifier mes infos</button>
 

@@ -36,7 +36,7 @@ if (array_key_exists("page", $_GET)) {
         // La page pour créer un poll
         case 'createPoll':
             $controller = new CreatePollController();
-            $controller->render();
+            $controller->poll();
             break;
 
         // la page une fois qu'on a crée le poll

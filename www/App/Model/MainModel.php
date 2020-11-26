@@ -7,7 +7,8 @@ class MainModel extends Database{
 
     
     public function getAllUserPolls(){
-        $reqAllPolls = $this->query("SELECT * FROM polls ORDER BY poll_id DESC ");
+        $myPolls = $_SESSION['id'];
+        $reqAllPolls = $this->query("SELECT * FROM polls WHERE accepted_id = '$myPolls' ORDER BY poll_id DESC ");
         return ($reqAllPolls);
         }
 

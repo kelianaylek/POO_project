@@ -9,10 +9,12 @@ class CreatePollController{
         $this->model = new CreatePollModel();
     }
 
-    public function render(){
+    public function poll(){
+        if(isset($_POST["sendPollToDb"])){
+            $exeCreatePoll = $this->model->createPoll();
+            header("Location: index.php?page=createdPoll&poll_id=$pollidarray");
+        }
         require ROOT."/App/View/CreatePollView.php";
-
-        $this->model->createPoll();
     }
 
 

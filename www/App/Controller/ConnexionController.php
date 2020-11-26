@@ -9,6 +9,7 @@ class ConnexionController{
 
 
     public function connexion(){
+
         if(!empty($_POST['submit_connexion'])){
             $mailConnect = htmlspecialchars($_POST['mail']);
             $passwordConnect = md5($_POST['pass']);
@@ -21,6 +22,7 @@ class ConnexionController{
                         $_SESSION['id'] = $reqLogin[0]->user_id;
                         $_SESSION['user_name'] = $reqLogin[0]->user_name;
                         $_SESSION['user_mail'] = $reqLogin[0]->user_email;
+                        $_SESSION['user_password'] = $reqLogin[0]->user_password;
 
                         header("Location: ../public/index.php?page=main");
                     }else{

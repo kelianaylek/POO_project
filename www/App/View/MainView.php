@@ -12,7 +12,7 @@
 
 <a href="?page=deconnexion">Se deconnecter</a>
 
-<button>Modifier mes infos</button>
+<a href="?page=profil">Modifier mes infos</a>
 
 <h2>Mes sondages :</h2>
 <table>

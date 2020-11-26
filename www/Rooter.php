@@ -6,6 +6,8 @@ use App\Controller\CreatePollController;
 use App\Controller\CreatedPollController;
 use App\Controller\SignUpController;
 use App\Controller\MainController;
+use App\Controller\ProfilController;
+
 
 
 
@@ -26,6 +28,11 @@ if (array_key_exists("page", $_GET)) {
         case 'signUp':
             $controller = new SignUpController();
             $controller->createAccount();
+            break;
+
+        case 'profil':
+            $controller = new ProfilController();
+            $controller->modifyAccount();
             break;
 
         case 'main':

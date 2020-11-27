@@ -15,6 +15,9 @@
 
 <a href="?page=profil">Modifier mes infos</a>
 
+<a href="?page=friends">Mes amis</a>
+
+
 <h2>Mes sondages :</h2>
 <table>
         <thead>

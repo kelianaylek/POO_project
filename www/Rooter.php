@@ -7,10 +7,7 @@ use App\Controller\CreatedPollController;
 use App\Controller\SignUpController;
 use App\Controller\MainController;
 use App\Controller\ProfilController;
-
-
-
-
+use App\Controller\FriendsController;
 
 if (array_key_exists("page", $_GET)) {
 
@@ -38,6 +35,11 @@ if (array_key_exists("page", $_GET)) {
         case 'main':
             $controller = new MainController();
             $controller->main();
+            break;
+
+        case 'friends':
+            $controller = new FriendsController();
+            $controller->friends();
             break;
 
         // La page pour créer un poll

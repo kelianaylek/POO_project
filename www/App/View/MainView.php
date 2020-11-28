@@ -66,7 +66,7 @@
         <?php
         foreach($friendPolls as $friendPoll) : ?>
             <tr>
-                <td><?= $friendPoll->accepted_id ?></td>
+                <td><?= $friendPoll->poll_creator ?></td>
                 <td><?= $friendPoll->poll_title ?></td>
                 <td><?= $friendPoll->poll_answer1 ?></td>
                 <td><?= $friendPoll->poll_answer2 ?></td>

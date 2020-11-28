@@ -47,7 +47,7 @@ class FriendsController{
                         $friendArray = $this->model->friendsList($_SESSION["id"]);
                         $friendArrayLength = count($friendArray);
 
-                        $alreadyAFriend;
+                        $alreadyAFriend = false;
 
 
                         for($j = 0; $j<=$friendArrayLength; $j++){
@@ -92,7 +92,7 @@ class FriendsController{
         // Supprimer un ami
         if(isset($_POST["supprFriend"])){
             if(!empty($_POST["deletedFriend"])){
-
+                $areFriends = false;
                 for($i = 0; $i<count($arrayOfFriendsNameArrays); $i++){
                     if($_POST["deletedFriend"] == $arrayOfFriendsNameArrays[$i][0]->user_name){
                         if($areFriends == false){

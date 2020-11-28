@@ -11,7 +11,7 @@ class CreatePollController{
 
     public function poll(){
         if(isset($_POST["sendPollToDb"])){
-            $exeCreatePoll = $this->model->createPoll();
+            $exeCreatePoll = $this->model->createPoll($_SESSION['user_name']);
             header("Location: index.php?page=createdPoll&poll_id=$pollidarray");
         }
         require ROOT."/App/View/CreatePollView.php";

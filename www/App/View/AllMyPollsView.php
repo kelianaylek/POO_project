@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<h2>Tous mes sondages :</h2>
+<table>
+        <thead>
+            <tr>
+                <th>Titre du sondage</th>
+                <th>Choix numéro 1</th>
+                <th>Choix numéro 2</th>
+                <th>Temps restant</th>
+            </tr>
+        </thead>
+        <tbody>
+    <pre>
+    </pre>
+    <?php
+
+    foreach($allMyPolls as $user_poll) : ?>
+        <tr>
+            <td><?= $user_poll->poll_title ?></td>
+            <td><?= $user_poll->poll_answer1 ?></td>
+            <td><?= $user_poll->poll_answer2 ?></td>
+            <td><?= $user_poll->poll_limit ?></td>
+        </tr>
+    <?php endforeach; ?>
+        </tbody>
+    </table>
+
+</body>
+</html>

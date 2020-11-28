@@ -8,6 +8,7 @@ use App\Controller\SignUpController;
 use App\Controller\MainController;
 use App\Controller\ProfilController;
 use App\Controller\FriendsController;
+use App\Controller\AllMyPollsController;
 
 if (array_key_exists("page", $_GET)) {
 
@@ -52,6 +53,11 @@ if (array_key_exists("page", $_GET)) {
         case 'createdPoll':
             $controller = new CreatedPollController();
             $controller->render();                
+            break;
+
+        case 'allMyPolls':
+            $controller = new AllMyPollsController();
+            $controller->displayAllMyPolls();                
             break;
     }
 } else {

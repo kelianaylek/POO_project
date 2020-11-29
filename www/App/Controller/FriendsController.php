@@ -10,10 +10,10 @@ class FriendsController{
 
     public function friends(){
 
-        // Affiche les id des amis
+        //id des amis
         $friendsList = $this->model->friendsList($_SESSION["id"]);
          
-        // Affiche les pseudos des amis
+        //pseudos des amis
         $friendsList = $this->model->friendsList($_SESSION["id"]);
         $friendsListlength = count($friendsList);
         $arrayOfFriendsNameArrays = [];
@@ -125,6 +125,24 @@ class FriendsController{
                 echo("Choisissez un ami à supprimer");
             }
         }
+
+        // Amis en ligne
+        $friendsList = $this->model->friendsList($_SESSION["id"]);
+
+        $arrayOnlineFriends = [];
+
+        for($i = 0; $i<count($friendsList); $i++){
+            $currentFriend = $friendsList[$i]->friend_id;
+            $onlineFriends = $this->model->onlineFriends($_SESSION["id"], $currentFriend);
+            // var_dump($onlineFriends);
+            // var_dump(count($onlineFriends));
+            if(count($onlineFriends) !== 0){
+                array_push($arrayOnlineFriends, $onlineFriends);
+            }
+        }
+
+
+
 
         require ROOT."/App/View/FriendsView.php";
     }

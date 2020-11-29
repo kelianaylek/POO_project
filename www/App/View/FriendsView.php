@@ -24,6 +24,15 @@
         </tr>
     <?php endforeach; ?>
 
+    <h2>Amis en ligne :</h2>
+
+    <?php
+    foreach($arrayOnlineFriends as $onlineFriend) : ?>
+        <tr>
+            <td><?= $onlineFriend[0]->user_name ?></td>
+
+        </tr>
+    <?php endforeach; ?>
 
 
     <h2>Ajouter un ami</h2>

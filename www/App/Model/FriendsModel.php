@@ -37,4 +37,12 @@ class FriendsModel extends Database{
         return ($reqSupprFriend);
     }
 
+    public function onlineFriends($userId, $currentFriend){
+        $reqOnlineFriends = $this->query("SELECT user_name FROM users WHERE user_id ='$currentFriend' AND user_isOnline = 1");
+        return ($reqOnlineFriends);
+    }
+
+
+
+
 }

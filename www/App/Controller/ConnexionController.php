@@ -10,6 +10,8 @@ class ConnexionController{
 
     public function connexion(){
 
+        $isOnline = 0;
+
         if(!empty($_POST['submit_connexion'])){
             $mailConnect = htmlspecialchars($_POST['mail']);
             $passwordConnect = md5($_POST['pass']);
@@ -24,6 +26,10 @@ class ConnexionController{
                         $_SESSION['user_mail'] = $reqLogin[0]->user_email;
                         $_SESSION['user_password'] = $reqLogin[0]->user_password;
 
+                        $isOnline = 1;
+
+                        $goOnline = $this->model->isOnline($_SESSION['id'], $isOnline);  
+                                                
                         header("Location: ../public/index.php?page=main");
                     }else{
                         echo('Echec de la connexion');
@@ -41,6 +47,9 @@ class ConnexionController{
 
     public function deconnexion(){
         session_destroy();
+        $isOnline = 0;
+        $goOffline = $this->model->isOnline($_SESSION['id'], $isOnline); 
+
         require ROOT."/App/View/DeconnexionView.php";
     }
 

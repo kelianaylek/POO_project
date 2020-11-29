@@ -52,7 +52,7 @@ if (array_key_exists("page", $_GET)) {
         // la page une fois qu'on a crée le poll
         case 'createdPoll':
             $controller = new CreatedPollController();
-            $controller->render();                
+            $controller->createdPoll();                
             break;
 
         case 'allMyPolls':

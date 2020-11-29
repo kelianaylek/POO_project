@@ -25,7 +25,8 @@
                 <th>Titre du sondage</th>
                 <th>Choix numéro 1</th>
                 <th>Choix numéro 2</th>
-                <th>Temps restant</th>
+                <th>Date</th>
+
             </tr>
         </thead>
         <tbody>
@@ -38,7 +39,8 @@
             <td><?= $user_poll->poll_title ?></td>
             <td><?= $user_poll->poll_answer1 ?></td>
             <td><?= $user_poll->poll_answer2 ?></td>
-            <td><?= $user_poll->poll_limit ?></td>
+            <td><?= $user_poll->created_at ?></td>
+            <td><a href="?page=createdPoll&poll_id=<?= $user_poll->poll_id ?>">Voir le sondage</a></td>
         </tr>
     <?php endforeach; ?>
         </tbody>
@@ -54,7 +56,8 @@
                 <th>Titre du sondage</th>
                 <th>Choix numéro 1</th>
                 <th>Choix numéro 2</th>
-                <th>Temps restant</th>
+                <th>Date de fin</th>
+
             </tr>
         </thead>
         <tbody>
@@ -71,6 +74,8 @@
                 <td><?= $friendPoll->poll_answer1 ?></td>
                 <td><?= $friendPoll->poll_answer2 ?></td>
                 <td><?= $friendPoll->poll_limit ?></td>
+                <td><a href="?page=createdPoll&poll_id=<?= $friendPoll->poll_id ?>">Voir le sondage</a></td>
+
             </tr>
         <?php endforeach; ?>
     <?php endforeach; ?>

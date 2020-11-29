@@ -14,7 +14,9 @@
                 <th>Titre du sondage</th>
                 <th>Choix numéro 1</th>
                 <th>Choix numéro 2</th>
-                <th>Temps restant</th>
+                <th>Date</th>
+                <th>Date de fin</th>
+
             </tr>
         </thead>
         <tbody>
@@ -27,7 +29,9 @@
             <td><?= $user_poll->poll_title ?></td>
             <td><?= $user_poll->poll_answer1 ?></td>
             <td><?= $user_poll->poll_answer2 ?></td>
-            <td><?= $user_poll->poll_limit ?></td>
+            <td><?= $user_poll->created_at ?></td>
+            <td><?= $user_poll->created_at ?></td>
+
         </tr>
     <?php endforeach; ?>
         </tbody>

@@ -9,11 +9,18 @@ class CreatedPollController{
         $this->model = new CreatedPollModel();
     }
 
-    public function render(){
-        $this->model->getLastPoll();
-        
+    public function createdPoll(){
 
-    
+        $pollId = $_GET["poll_id"];
+
+        // var_dump($pollId);
+
+        $getPoll = $this->model->getPoll($pollId);
+        
+        // var_dump($getPoll);
+
+        require ROOT."/App/View/CreatedPollView.php";
+
     }
 
     

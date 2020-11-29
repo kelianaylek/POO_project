@@ -15,42 +15,34 @@
                 <th>Titre du sondage</th>
                 <th>Choix numéro 1</th>
                 <th>Choix numéro 2</th>
-                <th>Temps restant</th>
+                <th>Date</th>
+                <th>Date de fin</th>
+
             </tr>
         </thead>
         <tbody>
-         
-       
-
     <pre>
-    <?php
-  
-
-    ?>
-    
+   
     </pre>
     <?php
-    foreach($LastPoll as $poll) : ?>
+    foreach($getPoll as $poll) : ?>
         <tr>
             <td><?= $poll->poll_title ?></td>
             <td><?= $poll->poll_answer1 ?></td>
             <td><?= $poll->poll_answer2 ?></td>
+            <td><?= $poll->created_at ?></td>
             <td><?= $poll->poll_limit ?></td>
+
 
         </tr>
     <?php endforeach; ?>
-
-    
-
-    
-
 
 
         </tbody>
     </table>
 
 
-
+<h3>Tchat à mettre:</h3>
 
 </body>
 </html>

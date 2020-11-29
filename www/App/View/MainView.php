@@ -25,7 +25,7 @@
                 <th>Titre du sondage</th>
                 <th>Choix numéro 1</th>
                 <th>Choix numéro 2</th>
-                <th>Date</th>
+                <th>Date de création</th>
 
             </tr>
         </thead>

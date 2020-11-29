@@ -6,9 +6,8 @@ use Core\Database;
 class MainModel extends Database{
 
     
-    public function getAllUserPolls(){
-        $myPolls = $_SESSION['id'];
-        $reqAllPolls = $this->query("SELECT * FROM polls WHERE accepted_id = '$myPolls' ORDER BY poll_id DESC ");
+    public function getAllUserPolls($userId, $currentTime){
+        $reqAllPolls = $this->query("SELECT * FROM polls WHERE accepted_id = '$userId' AND poll_limit < '$currentTime' ORDER BY poll_id DESC ");
         return ($reqAllPolls);
     }
 
@@ -27,8 +26,8 @@ class MainModel extends Database{
         return ($reqCurrentFriendName);
     }
 
-    public function currentFriendsPolls($friendId){
-        $reqCurrentFriendsPolls = $this->query("SELECT * FROM polls WHERE accepted_id = '$friendId'");
+    public function currentFriendsPolls($friendId, $currentDateTime){
+        $reqCurrentFriendsPolls = $this->query("SELECT * FROM polls WHERE accepted_id = '$friendId' AND poll_limit > '$currentDateTime' ORDER BY created_at DESC");
         return ($reqCurrentFriendsPolls);
     }
 

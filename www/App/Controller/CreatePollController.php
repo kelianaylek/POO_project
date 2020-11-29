@@ -22,6 +22,8 @@ class CreatePollController{
                         date_default_timezone_set("Europe/Paris");
                         $currentDateTime = date('Y-m-d H:i:s');
 
+                        echo($currentDateTime);
+
                         $selectedDate = date_create($limitDate);
                         $currentDate = date_create($currentDateTime);
 

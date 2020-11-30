@@ -52,8 +52,16 @@ if (array_key_exists("page", $_GET)) {
         // la page une fois qu'on a crée le poll
         case 'createdPoll':
             $controller = new CreatedPollController();
-            $controller->createdPoll();                
+            $controller->createdPoll();   
+            $controller->saveMessage();
+            $controller->getAllMessages();                
+             
             break;
+
+        // case 'sendMessage':
+        //     $controller = new CreatedPollController();
+        //     $controller->saveMessage();                
+        //     break;
 
         case 'allMyPolls':
             $controller = new AllMyPollsController();

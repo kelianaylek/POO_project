@@ -45,7 +45,21 @@ class CreatedPollModel extends Database{
         return ($getFriendsEmail);
     }
 
+    public function getUserName($userId){
+        $getUserName = $this->query("SELECT user_name FROM users WHERE user_id = '$userId'");
+        return ($getUserName);
+    }
 
+
+    public function sendMessage($pollId, $userId, $userName, $message){
+        $sendMessageContent = $this->pdo->query("INSERT INTO messages (message_content, user_id, user_name, poll_id)
+        VALUES ('$message', '$userId', '$userName', '$pollId')"); 
+    }
+
+    public function getMessages($pollId){
+        $getMessages = $this->query("SELECT * FROM messages WHERE poll_id = '$pollId' ORDER BY message_date DESC");
+        return ($getMessages);
+    }
     
 
 }

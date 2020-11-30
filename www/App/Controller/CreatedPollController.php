@@ -10,8 +10,6 @@ class CreatedPollController{
     }
 
 
-
-
     public function pollResult($pollId){
         
         $pollId = $_GET["poll_id"];
@@ -42,6 +40,48 @@ class CreatedPollController{
        }
        require ROOT."/App/View/ResultPollView.php";
     }
+
+    public function saveMessage(){
+        if(isset($_POST["sendMessage"])){
+            if(!empty($_POST["message"])){
+                $pollId = $_GET["poll_id"];
+    
+                $getUsername = $this->model->getUserName($_SESSION["id"]);
+                $userName = $getUsername[0]->user_name;
+                $message = $_POST["message"];    
+                $getPoll = $this->model->sendMessage($pollId,$_SESSION["id"],$userName, $message);
+            }else{
+                echo("Ecris un message avant d'envoyer");
+            }
+        }
+
+    }
+
+    
+    public function getAllMessages()
+    {
+        $pollId = $_GET["poll_id"];
+
+        $getMessages = $this->model->getMessages($pollId);
+
+        // var_dump($getMessages);
+        // var_dump(count($getMessages));
+        
+        for($i = 0;$i<count($getMessages);$i++){
+            $currentUser = $getMessages[$i]->user_name;
+            $currentMessage = $getMessages[$i]->message_content;
+            $messageDate = $getMessages[$i]->message_date;
+
+            $messageDate = date('Y-m-d H:i:s');
+
+
+
+            echo("<br>" . $currentUser ." : ". $currentMessage ." - ". $messageDate ."<br>");
+
+        }
+    }
+
+
 
     public function createdPoll(){
         $pollId = $_GET["poll_id"];
@@ -77,10 +117,19 @@ class CreatedPollController{
                     header("Location: ../public/index.php?page=createdPoll&poll_id=$pollId");
                 }
             }
+            return $this->getMessages();
+
             // View pour voir les résultat           
-            require ROOT."/App/View/ResultPollView.php";         
+            require ROOT."/App/View/ResultPollView.php";    
+            
+            var_dump($getMessages);
+
             // View pour partager le lien par mail 
             require ROOT."/App/View/SharePollView.php";
+
+
+
+
         // Si c'est un ami qui regarde le poll 
         }else{
             $whohasVoted = $this->model->whohasVoted($pollId, $_SESSION["id"]);
@@ -104,6 +153,8 @@ class CreatedPollController{
                         $voteAnswer1 = $this->model->voteAnswer1($pollId, $newPollFirstAnswerVotes);
 
                         return $this->pollResult($pollId);
+                        return $this->getMessages();
+
 
                         require ROOT."/App/View/ResultPollView.php";
                 }else{
@@ -121,12 +172,15 @@ class CreatedPollController{
                     $voteAnswer1 = $this->model->voteAnswer2($pollId, $newPollFirstAnswerVotes);
 
                     return $this->pollResult($pollId);
+                    return $this->getMessages();
 
                     require ROOT."/App/View/ResultPollView.php";
                 }else{
                     echo("user has already voted");
                 }
-            }               
+            } 
+            
+
         }
 
     }

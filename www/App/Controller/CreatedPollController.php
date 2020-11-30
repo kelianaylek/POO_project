@@ -61,27 +61,15 @@ class CreatedPollController{
     public function getAllMessages()
     {
         $pollId = $_GET["poll_id"];
-
         $getMessages = $this->model->getMessages($pollId);
-
-        // var_dump($getMessages);
-        // var_dump(count($getMessages));
-        
         for($i = 0;$i<count($getMessages);$i++){
             $currentUser = $getMessages[$i]->user_name;
             $currentMessage = $getMessages[$i]->message_content;
             $messageDate = $getMessages[$i]->message_date;
-
-            $messageDate = date('Y-m-d H:i:s');
-
-
-
+            // $messageDate = date('Y-m-d H:i:s');
             echo("<br>" . $currentUser ." : ". $currentMessage ." - ". $messageDate ."<br>");
-
         }
     }
-
-
 
     public function createdPoll(){
         $pollId = $_GET["poll_id"];
@@ -126,8 +114,6 @@ class CreatedPollController{
 
             // View pour partager le lien par mail 
             require ROOT."/App/View/SharePollView.php";
-
-
 
 
         // Si c'est un ami qui regarde le poll 

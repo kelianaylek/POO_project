@@ -9,8 +9,41 @@ class CreatedPollController{
         $this->model = new CreatedPollModel();
     }
 
-    public function createdPoll(){
 
+
+
+    public function pollResult($pollId){
+        
+        $pollId = $_GET["poll_id"];
+        $getPoll = $this->model->getPoll($pollId);
+        $getPollAcceptedId = $getPoll[0]->accepted_id;
+        $getPollFirstAnswer = $getPoll[0]->poll_answer1;
+        $getPollSecondAnswer = $getPoll[0]->poll_answer2;
+       // faire le calcul des scores
+       $getPollResult = $this->model->getPollResult($pollId);
+       $pollId = $getPollResult[0]->poll_id; 
+       $votesAnswer1 = $getPollResult[0]->poll_answer1_votes; 
+       $votesAnswer2 = $getPollResult[0]->poll_answer2_votes; 
+       $totalVotes = $votesAnswer1 + $votesAnswer2;
+       if($votesAnswer1 == 0 && $votesAnswer2 == 0){
+           $votesAnswer1Percents = 0;
+           $votesAnswer2Percents = 0;
+       }else if($votesAnswer1 == 0 && $votesAnswer2 !== 0){
+           $votesAnswer1Percents = 0;
+           $votesAnswer2Percents = round(($votesAnswer2/$totalVotes)*100);
+       }
+       else if($votesAnswer2 == 0 && $votesAnswer1 !== 0){
+           $votesAnswer2Percents = 0;
+           $votesAnswer1Percents = round(($votesAnswer1/$totalVotes)*100);
+       }
+       else if($votesAnswer1 !== 0 && $votesAnswer2 !== 0){
+           $votesAnswer1Percents = round(($votesAnswer1/$totalVotes)*100);
+           $votesAnswer2Percents = round(($votesAnswer2/$totalVotes)*100);
+       }
+       require ROOT."/App/View/ResultPollView.php";
+    }
+
+    public function createdPoll(){
         $pollId = $_GET["poll_id"];
         $getPoll = $this->model->getPoll($pollId);
         $getPollAcceptedId = $getPoll[0]->accepted_id;
@@ -21,42 +54,16 @@ class CreatedPollController{
 
         // Si c'est le creator du poll qui regarde 
         if($_SESSION["id"] == $getPollAcceptedId){
-            // faire le calcul des scores
-            $getPollResult = $this->model->getPollResult($pollId);
-            $pollId = $getPollResult[0]->poll_id; 
-            $votesAnswer1 = $getPollResult[0]->poll_answer1_votes; 
-            $votesAnswer2 = $getPollResult[0]->poll_answer2_votes; 
-            $totalVotes = $votesAnswer1 + $votesAnswer2;
-            if($votesAnswer1 == 0 && $votesAnswer2 == 0){
-                $votesAnswer1Percents = 0;
-                $votesAnswer2Percents = 0;
-                
-            }else if($votesAnswer1 == 0 && $votesAnswer2 !== 0){
-                $votesAnswer1Percents = 0;
-                $votesAnswer2Percents = round(($votesAnswer2/$totalVotes)*100);
-
-            }
-            else if($votesAnswer2 == 0 && $votesAnswer1 !== 0){
-                $votesAnswer2Percents = 0;
-                $votesAnswer1Percents = round(($votesAnswer1/$totalVotes)*100);
-            }
-            else if($votesAnswer1 !== 0 && $votesAnswer2 !== 0){
-                $votesAnswer1Percents = round(($votesAnswer1/$totalVotes)*100);
-                $votesAnswer2Percents = round(($votesAnswer2/$totalVotes)*100);
-            }
-
+            return $this->pollResult($pollId);
             $friendsEmailList = [];
-
             if(isset($_POST["sharePoll"])){
                 $friendList = $this->model->getFriendsList($_SESSION["id"]);
-
                 for($i = 0; $i<count($friendList);$i++){
                     $friendId = $friendList[$i]->friend_id;
                     $friendsEmail = $this->model->getFriendsEmail($friendId);
                     $friendEmail = $friendsEmail[0]->user_email;
                     array_push($friendsEmailList, $friendEmail);
                 }
-
                 for($i = 0; $i<count($friendsEmailList);$i++){
                     // Envoie du mail : 
                     ini_set( 'display_errors', 1 );
@@ -69,15 +76,11 @@ class CreatedPollController{
                     mail($to,$subject,$message, $headers);
                     header("Location: ../public/index.php?page=createdPoll&poll_id=$pollId");
                 }
-
             }
-
-
             // View pour voir les résultat           
             require ROOT."/App/View/ResultPollView.php";         
             // View pour partager le lien par mail 
             require ROOT."/App/View/SharePollView.php";
-
         // Si c'est un ami qui regarde le poll 
         }else{
             $whohasVoted = $this->model->whohasVoted($pollId, $_SESSION["id"]);
@@ -85,28 +88,8 @@ class CreatedPollController{
                 require ROOT."/App/View/ChoosePollAnswer.php";
             }
             else{
-                // faire le calcul des scores
-                $getPollResult = $this->model->getPollResult($pollId);
-                $votesAnswer1 = $getPollResult[0]->poll_answer1_votes; 
-                $votesAnswer2 = $getPollResult[0]->poll_answer2_votes; 
-                $totalVotes = $votesAnswer1 + $votesAnswer2;
-                if($votesAnswer1 == 0 && $votesAnswer2 == 0){
-                    $votesAnswer1Percents = 0;
-                    $votesAnswer2Percents = 0;
-                    
-                }else if($votesAnswer1 == 0 && $votesAnswer2 !== 0){
-                    $votesAnswer1Percents = 0;
-                    $votesAnswer2Percents = round(($votesAnswer2/$totalVotes)*100);
+                return $this->pollResult($pollId);
 
-                }
-                else if($votesAnswer2 == 0 && $votesAnswer1 !== 0){
-                    $votesAnswer2Percents = 0;
-                    $votesAnswer1Percents = round(($votesAnswer1/$totalVotes)*100);
-                }
-                else if($votesAnswer1 !== 0 && $votesAnswer2 !== 0){
-                    $votesAnswer1Percents = round(($votesAnswer1/$totalVotes)*100);
-                    $votesAnswer2Percents = round(($votesAnswer2/$totalVotes)*100);
-                }
                 require ROOT."/App/View/ResultPollView.php";
             }
             // Choix 1
@@ -120,28 +103,8 @@ class CreatedPollController{
                         $newPollFirstAnswerVotes =  $getPollFirstAnswerVotes + 1;
                         $voteAnswer1 = $this->model->voteAnswer1($pollId, $newPollFirstAnswerVotes);
 
-                        // faire le calcul des scores
-                        $getPollResult = $this->model->getPollResult($pollId);
-                        $votesAnswer1 = $getPollResult[0]->poll_answer1_votes; 
-                        $votesAnswer2 = $getPollResult[0]->poll_answer2_votes; 
-                        $totalVotes = $votesAnswer1 + $votesAnswer2;
-                        if($votesAnswer1 == 0 && $votesAnswer2 == 0){
-                            $votesAnswer1Percents = 0;
-                            $votesAnswer2Percents = 0;
-                            
-                        }else if($votesAnswer1 == 0 && $votesAnswer2 !== 0){
-                            $votesAnswer1Percents = 0;
-                            $votesAnswer2Percents = round(($votesAnswer2/$totalVotes)*100);
-            
-                        }
-                        else if($votesAnswer2 == 0 && $votesAnswer1 !== 0){
-                            $votesAnswer2Percents = 0;
-                            $votesAnswer1Percents = round(($votesAnswer1/$totalVotes)*100);
-                        }
-                        else if($votesAnswer1 !== 0 && $votesAnswer2 !== 0){
-                            $votesAnswer1Percents = round(($votesAnswer1/$totalVotes)*100);
-                            $votesAnswer2Percents = round(($votesAnswer2/$totalVotes)*100);
-                        }
+                        return $this->pollResult($pollId);
+
                         require ROOT."/App/View/ResultPollView.php";
                 }else{
                     echo("user has already voted");
@@ -157,34 +120,12 @@ class CreatedPollController{
                     $newPollFirstAnswerVotes =  $getPollFirstAnswerVotes + 1;
                     $voteAnswer1 = $this->model->voteAnswer2($pollId, $newPollFirstAnswerVotes);
 
-                    // faire le calcul des scores
-                    $getPollResult = $this->model->getPollResult($pollId);
-                    $votesAnswer1 = $getPollResult[0]->poll_answer1_votes; 
-                    $votesAnswer2 = $getPollResult[0]->poll_answer2_votes; 
-                    $totalVotes = $votesAnswer1 + $votesAnswer2;
+                    return $this->pollResult($pollId);
 
-                    if($votesAnswer1 == 0 && $votesAnswer2 == 0){
-                        $votesAnswer1Percents = 0;
-                        $votesAnswer2Percents = 0;
-                        
-                    }else if($votesAnswer1 == 0 && $votesAnswer2 !== 0){
-                        $votesAnswer1Percents = 0;
-                        $votesAnswer2Percents = round(($votesAnswer2/$totalVotes)*100);
-        
-                    }
-                    else if($votesAnswer2 == 0 && $votesAnswer1 !== 0){
-                        $votesAnswer2Percents = 0;
-                        $votesAnswer1Percents = round(($votesAnswer1/$totalVotes)*100);
-                    }
-                    else if($votesAnswer1 !== 0 && $votesAnswer2 !== 0){
-                        $votesAnswer1Percents = round(($votesAnswer1/$totalVotes)*100);
-                        $votesAnswer2Percents = round(($votesAnswer2/$totalVotes)*100);
-                    }
                     require ROOT."/App/View/ResultPollView.php";
                 }else{
                     echo("user has already voted");
                 }
-                    
             }               
         }
 

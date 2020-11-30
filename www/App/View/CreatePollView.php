@@ -89,15 +89,11 @@
                 }      
             ?>
         </select>
-
 <br>
 <br>
-
         <!-- Bouton d'envoie du formulaire  -->
-        <input name="sendPollToDb" type="submit" placehoder="Créer le sondage">
-        
+        <input name="sendPollToDb" type="submit" placehoder="Créer le sondage">    
     </form> 
-
     <a href="?page=main">Retour à l'accueil</a>
 </body>
 </html>

@@ -35,7 +35,7 @@ class MainController{
             array_push($friendsPolls, $friendCurrentPolls);
         }
 
-        // Amis online
+
 
         require ROOT."/App/View/MainView.php";
 

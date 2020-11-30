@@ -74,7 +74,7 @@
                 <td><?= $friendPoll->poll_answer1 ?></td>
                 <td><?= $friendPoll->poll_answer2 ?></td>
                 <td><?= $friendPoll->poll_limit ?></td>
-                <td><a href="?page=createdPoll&poll_id=<?= $friendPoll->poll_id ?>">Voir le sondage</a></td>
+                <td><a href="?page=createdPoll&poll_id=<?= $friendPoll->poll_id?>">Voir le sondage</a></td>
 
             </tr>
         <?php endforeach; ?>

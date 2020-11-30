@@ -9,4 +9,43 @@ class CreatedPollModel extends Database{
         $LastPoll = $this->query("SELECT * FROM polls WHERE poll_id = '$pollId'");
        return ($LastPoll);
     }
+
+    public function voteAnswer1($pollId, $newPollFirstAnswerVotes) {
+        $voteAnswer1 = $this->query("UPDATE polls SET poll_answer1_votes = '$newPollFirstAnswerVotes' WHERE poll_id = '$pollId'");
+        return ($voteAnswer1);
+    }
+
+    public function voteAnswer2($pollId, $newPollFirstAnswerVotes) {
+        $voteAnswer2 = $this->query("UPDATE polls SET poll_answer2_votes = '$newPollFirstAnswerVotes' WHERE poll_id = '$pollId'");
+        return ($voteAnswer2);
+    }
+
+    public function getPollResult($pollId) {
+        $getPollResult = $this->query("SELECT * FROM polls WHERE poll_id = '$pollId'");
+        return ($getPollResult);
+    }
+
+    function vote($pollId, $userId){
+        $whohasVoted = $this->pdo->prepare("INSERT INTO polls_answered (poll_id, user_id) 
+        VALUES (?,?)");
+        $whohasVoted->execute(array($pollId,$userId));
+    }
+
+    public function whohasVoted($pollId, $userId) {
+        $whohasVoted = $this->query("SELECT * FROM polls_answered WHERE poll_id = '$pollId' AND user_id = $userId");
+        return ($whohasVoted);
+    }
+
+    public function getFriendsList($me){
+        $reqfriendList = $this->query("SELECT friend_id FROM friends WHERE user_id = '$me'");
+        return ($reqfriendList);
+    }
+    public function getFriendsEmail($friendId){
+        $getFriendsEmail = $this->query("SELECT user_email FROM users WHERE user_id = '$friendId'");
+        return ($getFriendsEmail);
+    }
+
+
+    
+
 }

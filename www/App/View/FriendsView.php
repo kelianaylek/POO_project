@@ -51,6 +51,7 @@
 
     
 
+    <a href="?page=main">Retour à l'accueil</a>
 
 </body>
 </html>

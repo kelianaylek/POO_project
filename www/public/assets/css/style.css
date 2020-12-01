@@ -16,6 +16,7 @@
 body{
     font-size :10px;
     font-family: var(--font-family);
+    background-color: #FFF4EC
 
 }
 h1{
@@ -25,7 +26,100 @@ h1{
     font-weight: 100;
     font-size: 2.3rem;
     letter-spacing: .3rem;
+    margin-bottom: 5vh;
 }
 h2{
     text-align: center;
+    font-size: 25px;
+    margin-top: 10vh;
 }
+h3 {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 5vh;
+}
+table {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    margin-bottom: 5vh;
+}
+a {
+    display: block;
+    margin: 0 auto;
+    -webkit-appearance: none;
+    outline: none;
+    border: 1px transparent;
+    padding: 1rem 0rem;
+    text-align: center;
+    border-radius: 20px;
+    margin: 2rem 0;
+    background-color: var(--old-rose) !important;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+
+}
+.centera {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5vh;
+
+}
+
+button {
+    border-radius: 20px;
+    background-color: var(--old-rose) !important;
+    color: #fff;
+    border: none;
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+a {
+    -webkit-appearance: none;
+    outline: none;
+    border: 1px transparent;
+    padding: 1rem 0rem;
+    text-align: center;
+    border-radius: 20px;
+    margin: 2rem 0;
+    background-color: var(--old-rose) !important;
+}
+
+a {
+    outline: none;
+    background-color: var(--champagne-pink);
+    border: 1px solid black;
+}
+
+a {
+    /* border-radius: 20px; */
+    border: 1px transparent;
+    margin: 1rem auto;
+    padding: 1rem;
+    width: 15%;
+    outline: none;
+    background-color: var(--french-lilac);
+    color: white !important;
+}
+
+a:hover {
+    transition: .4s;
+    border-radius: 20px;
+    background-color: var(--mellow-abricot);
+    color: white !important;
+}
+
+a:not(:hover) {
+    transition: .4s;
+    border-radius: 0px;
+    color: white !important;
+}
+

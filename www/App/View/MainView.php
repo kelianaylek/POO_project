@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -10,12 +11,14 @@
 <!-- Afficher le user name -->
 <h1>Bienvenue <?php echo($user[0]->user_name)?></h1>
 <!-- <h1>Bienvenue <?php echo($_SESSION["user_name"])?></h1> -->
-
+<div class="centera">
 <a href="?page=deconnexion">Se deconnecter</a>
 
 <a href="?page=profil">Modifier mes infos</a>
 
+
 <a href="?page=friends">Mes amis</a>
+</div>
 
 
 <h2>Mes sondages passés :</h2>

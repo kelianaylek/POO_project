@@ -50,6 +50,7 @@ class CreatedPollController{
                 $userName = $getUsername[0]->user_name;
                 $message = $_POST["message"];    
                 $getPoll = $this->model->sendMessage($pollId,$_SESSION["id"],$userName, $message);
+                header("Location: ../public/index.php?page=createdPoll&poll_id=$pollId");
             }else{
                 echo("Ecris un message avant d'envoyer");
             }
@@ -110,8 +111,6 @@ class CreatedPollController{
             // View pour voir les résultat           
             require ROOT."/App/View/ResultPollView.php";    
             
-            var_dump($getMessages);
-
             // View pour partager le lien par mail 
             require ROOT."/App/View/SharePollView.php";
 

@@ -96,8 +96,8 @@
 
 
 
-    <a href="?page=createPoll">Créer un sondage</a>
-    <a href="?page=allMyPolls">Tous mes sondages</a>
+    <a href="?page=createPoll" class="returnhome">Créer un sondage</a>
+    <a href="?page=allMyPolls" class="returnhome">Tous mes sondages</a>
 
 
 

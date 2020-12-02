@@ -9,6 +9,7 @@
 <body>
     
 <h2>Tous mes sondages :</h2>
+<div class="center">
 <table>
         <thead>
             <tr>
@@ -40,8 +41,9 @@
     <?php endforeach; ?>
         </tbody>
     </table>
+    </div>
 
-    <a href="?page=main">Retour à l'accueil</a>
+    <a href="?page=main" class="returnhome">Retour à l'accueil</a>
 
 
 </body>

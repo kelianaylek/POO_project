@@ -52,7 +52,7 @@
 
     
 
-    <a href="?page=main">Retour à l'accueil</a>
+    <a href="?page=main" class="returnhome">Retour à l'accueil</a>
 
 </body>
 </html>

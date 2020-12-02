@@ -17,6 +17,8 @@
 <h3>Total votes : <?=$totalVotes?></h3>
 
 <div id="messages"></div>
+
+
     <form method="POST">
         <input class="message" type="text" name="message" id="">
         <button class="sendMessage" type="submit" name="sendMessage">Envoyer</button>

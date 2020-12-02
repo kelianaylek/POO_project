@@ -54,7 +54,7 @@ if (array_key_exists("page", $_GET)) {
             $controller = new CreatedPollController();
             $controller->createdPoll();   
             $controller->saveMessage();
-            // $controller->getAllMessages();                
+            $controller->getMessages();                
             break;
 
         case 'allMyPolls':

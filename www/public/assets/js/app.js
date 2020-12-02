@@ -5,22 +5,13 @@ $(".message").click(function(e) {
         url: "?page=createdPoll",
         method: "POST",
         dataType: 'json',
-        data: { message: $(".sendMessage").val() }
-    }).done(function(response) {
-        // getMessages();
-    })
+        data: { "message": $(".sendMessage").val() },
+        success: function(data) {
+            alert(data);
+            alert($(".sendMessage").val())
+        },
+        error: function(response) {
+            console.log(response)
+        }
+    }).done(function(response) {})
 })
-
-// function getMessages() {
-//     $.ajax({
-//         url: "Routeur.php?function=get",
-//         dataType: 'json',
-//         success: function(response) {
-//             response.forEach(message => {
-//                 $("#messages").append(`<p>${message.content}</p>`)
-
-//             });
-//             console.log(response);
-//         }
-//     })
-// }

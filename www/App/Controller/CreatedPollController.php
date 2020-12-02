@@ -42,60 +42,47 @@ class CreatedPollController{
     }
 
     public function saveMessage(){
+        if(isset($_POST["sendMessage"])){
+            $pollId = $_GET["poll_id"];
 
-        $pollId = $_GET["poll_id"];
+            // get current message 
+            $currentMessage = $_POST["message"];
+            
+            $getLastMessage = $this->model->getLastMessage($pollId);
+            if(count($getLastMessage) !== 0){
+                $lastMessage = $getLastMessage[0]->message_content;
+                 header("Location: ../public/index.php?page=createdPoll&poll_id=$pollId");
 
-        $message = "message";
-
-        $getUsername = $this->model->sendMessage($pollId, $_SESSION["id"], $_SESSION["user_name"], $data);
+            }
+          
+            if($currentMessage !== ""){
+                    if(isset($_POST['message'])){
+                        echo('Nickel bro');
+                        $pollId = $_GET["poll_id"];
+                        $getUsername = $this->model->sendMessage($pollId, $_SESSION["id"], $_SESSION["user_name"], $currentMessage);
+                    }
+            }else{
+                echo('Merci de ne pas mettre un message vide');
+            }
+        }else{
+        }
+   
     }
 
-    
-    // public function getAllMessages(){
- 
-    // }
-
-
-
-
-
-
-
-
-
-
-
-
-    // public function saveMessage(){
-    //     if(isset($_POST["sendMessage"])){
-    //         if(!empty($_POST["message"])){
-    //             $pollId = $_GET["poll_id"];
-    
-    //             $getUsername = $this->model->getUserName($_SESSION["id"]);
-    //             $userName = $getUsername[0]->user_name;
-    //             $message = $_POST["message"];    
-    //             $getPoll = $this->model->sendMessage($pollId,$_SESSION["id"],$userName, $message);
-    //             header("Location: ../public/index.php?page=createdPoll&poll_id=$pollId");
-    //         }else{
-    //             echo("Ecris un message avant d'envoyer");
-    //         }
-    //     }
-
-    // }
-
-    
-    // public function getAllMessages()
-    // {
-    //     $pollId = $_GET["poll_id"];
-    //     $getMessages = $this->model->getMessages($pollId);
-    //     for($i = 0;$i<count($getMessages);$i++){
-    //         $currentUser = $getMessages[$i]->user_name;
-    //         $currentMessage = $getMessages[$i]->message_content;
-    //         $messageDate = $getMessages[$i]->message_date;
-    //         // $messageDate = date('Y-m-d H:i:s');
-    //         echo("<br>" . $currentUser ." : ". $currentMessage ." - ". $messageDate ."<br>");
-    //     }
-    // }
+    // Display poll's messages 
+    public function getMessages(){
+        $pollId = $_GET["poll_id"];
+        $getMessages = $this->model->getMessages($pollId);
+        foreach($getMessages as $getMessage) : ?>
+            <tr>
+                <br>
+                <td><?= $getMessage->user_name ?> : </td>
+                <td><?= $getMessage->message_content ?> </td>
+                <td>(<?= $getMessage->message_date ?>)</td>
+                <br>
+            </tr>
+        <?php endforeach;
+    }
 
     public function createdPoll(){
         $pollId = $_GET["poll_id"];

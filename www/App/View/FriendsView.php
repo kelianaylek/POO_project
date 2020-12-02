@@ -9,19 +9,11 @@
 <body>
     
     <h1>Mes amis :</h1>
-    <!-- <?php
-    foreach($friendsList as $user_friend) : ?>
-        <tr>
-            <td><?= $user_friend->friend_id ?></td>
-
-        </tr>
-    <?php endforeach; ?> -->
 
     <?php
     foreach($arrayOfFriendsNameArrays as $user_friend) : ?>
         <tr>
             <td><?= $user_friend[0]->user_name ?></td>
-
         </tr>
     <?php endforeach; ?>
     <h3>Amis en ligne :</h3>

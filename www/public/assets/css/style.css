@@ -17,7 +17,10 @@
 body {
     font-size: 10px;
     font-family: var(--font-family);
-    background-color: #FFF4EC
+    background-color: #FFF4EC;
+    text-align: center;
+    font-size: 18px;
+    
 }
 
 h1 {
@@ -134,4 +137,7 @@ a:not(:hover) {
 
 table.centers {
     margin: 0 auto;
+}
+tr {
+    margin: 0;
 }

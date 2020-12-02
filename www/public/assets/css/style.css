@@ -1,25 +1,26 @@
 @import 'form.css';
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-:root{
-    --french-lilac   :#966B9D;
-    --old-rose       :#C98686;
-    --mellow-abricot :#F2B880;
-    --sea-shell      :#FFF4EC;
-    --champagne-pink :#E7CFBC;
-    --font-family    :  'Oswald', sans-serif;
-    
+
+:root {
+    --french-lilac: #966B9D;
+    --old-rose: #C98686;
+    --mellow-abricot: #F2B880;
+    --sea-shell: #FFF4EC;
+    --champagne-pink: #E7CFBC;
+    --font-family: 'Oswald', sans-serif;
 }
-body{
-    font-size :10px;
+
+body {
+    font-size: 10px;
     font-family: var(--font-family);
     background-color: #FFF4EC
-
 }
-h1{
+
+h1 {
     text-align: center;
     margin: 4rem auto 0;
     font-family: var(--font-family);
@@ -28,20 +29,24 @@ h1{
     letter-spacing: .3rem;
     margin-bottom: 5vh;
 }
-h2{
+
+h2 {
     text-align: center;
     font-size: 25px;
     margin-top: 10vh;
 }
+
 h3 {
     text-align: center;
     font-size: 25px;
     margin-top: 5vh;
 }
+
 table {
     font-size: 18px;
     margin-bottom: 5vh;
 }
+
 a {
     display: block;
     margin: 0 auto;
@@ -57,13 +62,12 @@ a {
     color: white;
     font-size: 14px;
     text-align: center;
-
 }
+
 .centera {
     display: flex;
     justify-content: center;
     margin-bottom: 5vh;
-
 }
 
 button {
@@ -73,13 +77,6 @@ button {
     border: none;
     padding: 10px;
 }
-
-
-
-
-
-
-
 
 a {
     -webkit-appearance: none;
@@ -120,19 +117,22 @@ a:not(:hover) {
     border-radius: 0px;
     color: white !important;
 }
+
 .returnhome {
     width: 15%;
 }
+
 .wrapper a {
     width: 15%;
 }
+
 .center {
     display: flex;
     justify-content: center;
     margin-top: 8vh;
 }
+
 table.centers {
     display: flex;
     justify-content: center;
 }
-

@@ -1,0 +1,48 @@
+:root {
+    --french-lilac: #966B9D;
+    --old-rose: #C98686;
+    --mellow-abricot: #F2B880;
+    --sea-shell: #FFF4EC;
+    --champagne-pink: #E7CFBC;
+    --font-family: 'Oswald', sans-serif;
+}
+
+body {
+    background-color: #FFF4EC;
+    font-family: 'Oswald', sans-serif;
+}
+
+table {
+    margin-left: 30%;
+    font-size: 20px;
+    display: inline-table;
+}
+
+tbody td:nth-child(4) {
+    font-size: 15px;
+}
+
+tbody td:nth-child(5) {
+    font-size: 15px;
+}
+
+h2 {
+    margin-top: 5%;
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+#messages {
+    margin-top: 10%;
+}
+
+button {
+    border-radius: 20px;
+    background-color: var(--old-rose) !important;
+    color: #fff;
+    border: none;
+    padding: 10px;
+}

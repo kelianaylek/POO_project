@@ -8,3 +8,4 @@ session_start();
 Autoloader::register();
 
 require ROOT."/Rooter.php";
+

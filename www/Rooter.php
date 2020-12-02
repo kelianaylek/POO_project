@@ -55,7 +55,6 @@ if (array_key_exists("page", $_GET)) {
             $controller->createdPoll();   
             $controller->saveMessage();
             $controller->getAllMessages();                
-             
             break;
 
         // case 'sendMessage':
@@ -67,7 +66,8 @@ if (array_key_exists("page", $_GET)) {
             $controller = new AllMyPollsController();
             $controller->displayAllMyPolls();                
             break;
+
     }
 } else {
-    $controller = new ConnexionController();
+    $controller = new SignUpController();
 }

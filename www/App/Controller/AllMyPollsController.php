@@ -8,10 +8,13 @@ class AllMyPollsController{
     }
 
 
+
     public function displayAllMyPolls(){
 
+        // Get all user polls 
         $allMyPolls = $this->model->myPolls($_SESSION['id']);
 
+        // Display user's poll 
         require ROOT."/App/View/AllMyPollsView.php";
     
     }

@@ -6,8 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    
-
 
 <table>
         <thead>
@@ -32,17 +30,10 @@
             <td><?= $poll->poll_answer2 ?></td>
             <td><?= $poll->created_at ?></td>
             <td><?= $poll->poll_limit ?></td>
-
-
         </tr>
     <?php endforeach; ?>
-
-
         </tbody>
     </table>
-
-
-<h3>Tchat à mettre:</h3>
 
 </body>
 </html>

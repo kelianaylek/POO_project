@@ -19,12 +19,9 @@
         <!-- password -->
         <label for="pass">Votre password</label>    
         <input type="password" name="pass">
-
         <input type="submit" name="submit_connexion" value="Se connecter" />
-    
     </form>
     
-
     <p>Pas encore de compte ?</p>
     <a href="../public/index.php?page=signUp">S'inscrire</a>
 

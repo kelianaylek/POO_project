@@ -7,17 +7,9 @@
 </head>
 <body>
     
-
 <form action="" method="POST">
     <button type="submit" name="sharePoll">Envoyer le lien par mail à tous mes amis</button>
 </form>
-
-
-
-
-
-
-
 
 </body>
 </html>

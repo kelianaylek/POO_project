@@ -13,13 +13,9 @@
 <!-- <h1>Bienvenue <?php echo($_SESSION["user_name"])?></h1> -->
 <div class="centera">
 <a href="?page=deconnexion">Se deconnecter</a>
-
 <a href="?page=profil">Modifier mes infos</a>
-
-
 <a href="?page=friends">Mes amis</a>
 </div>
-
 
 <h2>Mes sondages passés :</h2>
 <table class="centers">
@@ -82,11 +78,6 @@
             </tr>
         <?php endforeach; ?>
     <?php endforeach; ?>
-
-
-
-
-    
         </tbody>
     </table>
 
@@ -94,13 +85,8 @@
 <br>
 <br>
 
-
-
     <a href="?page=createPoll" class="returnhome">Créer un sondage</a>
     <a href="?page=allMyPolls" class="returnhome">Tous mes sondages</a>
-
-
-
 
 </body>
 </html>

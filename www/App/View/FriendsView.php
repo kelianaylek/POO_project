@@ -24,9 +24,7 @@
 
         </tr>
     <?php endforeach; ?>
-
     <h3>Amis en ligne :</h3>
-
     <?php
     foreach($arrayOnlineFriends as $onlineFriend) : ?>
         <tr>
@@ -34,7 +32,6 @@
 
         </tr>
     <?php endforeach; ?>
-
 
     <h3>Ajouter un ami</h3>
 
@@ -49,8 +46,6 @@
     <input type="text" name="deletedFriend" placeholder="Rechercher un ami">
     <button type="submit" name="supprFriend">Supprimer cet ami</button>
     </form>
-
-    
 
     <a href="?page=main" class="returnhome">Retour à l'accueil</a>
 

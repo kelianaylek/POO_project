@@ -26,7 +26,6 @@
     <pre>
     </pre>
     <?php
-
     foreach($allMyPolls as $user_poll) : ?>
         <tr>
             <td><?= $user_poll->poll_title ?></td>
@@ -35,8 +34,6 @@
             <td><?= $user_poll->created_at ?></td>
             <td><?= $user_poll->poll_limit ?></td>
             <td><a href="?page=createdPoll&poll_id=<?= $user_poll->poll_id ?>">Voir</a></td>
-           
-
         </tr>
     <?php endforeach; ?>
         </tbody>

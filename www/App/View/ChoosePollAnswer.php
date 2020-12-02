@@ -12,9 +12,7 @@
 <form action="" method="POST">
     <button type="submit" name="chooseFirstAnswer"><?=$getPollFirstAnswer?></button>
 </form>
-
 <br><br>
-
 <form action="" method="POST">
     <button type="submit" name="chooseSecondAnswer"><?=$getPollSecondAnswer?></button>
 </form>

@@ -16,18 +16,13 @@
 
 <h3>Total votes : <?=$totalVotes?></h3>
 
-
 <div id="messages"></div>
     <form method="POST">
         <input type="text" name="message" id="">
         <button type="submit" name="sendMessage">Envoyer</button>
     </form>
 
-
-
     <a href="?page=main">Retour à l'accueil</a>
-    
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../public/assets/js/app.js"></script>
 </body>

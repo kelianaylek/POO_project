@@ -23,12 +23,9 @@
         <input type="password" name="pass">
         <label for="confirmPassword">Confirm password</label>    
         <input type="password" name="confirmPass">
-
         <input type="submit" name="submit_signUp" value="Se connecter" />
-    
     </form>
  
-
     <p>Already have an account ?</p>
     <a href="../public/index.php?page=connexion">Se connecter</a>
     

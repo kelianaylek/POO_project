@@ -1,0 +1,31 @@
+body {
+    background-color: #FFF4EC;
+    font-family: 'Oswald', sans-serif;
+}
+
+table {
+    margin-left: 30%;
+    font-size: 20px;
+    display: inline-table;
+}
+
+tbody td:nth-child(4) {
+    font-size: 15px;
+}
+
+tbody td:nth-child(5) {
+    font-size: 15px;
+}
+
+h2 {
+    margin-top: 5%;
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+#messages {
+    margin-top: 10%;
+}

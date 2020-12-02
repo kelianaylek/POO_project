@@ -56,11 +56,13 @@ class CreatedPollModel extends Database{
         $sendMessageContent = $this->pdo->query("INSERT INTO messages (message_content, user_id, user_name, poll_id)
         VALUES ('$message', '$userId', '$userName', '$pollId')"); 
     }
+
+    
     // Get all messages send in a poll 
-    public function getMessages($pollId){
-        $getMessages = $this->query("SELECT * FROM messages WHERE poll_id = '$pollId' ORDER BY message_date DESC");
-        return ($getMessages);
-    }
+    // public function getMessages($pollId){
+    //     $getMessages = $this->query("SELECT * FROM messages WHERE poll_id = '$pollId' ORDER BY message_date DESC");
+    //     return ($getMessages);
+    // }
     
 
 }

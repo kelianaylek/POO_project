@@ -1,15 +1,15 @@
 // getMessages();
-// $("sendMessage").click(function(e) {
-//     e.preventDefault();
-//     $.ajax({
-//         url: "Routeur.php?function=save",
-//         method: "POST",
-//         dataType: 'json',
-//         data: { content: $("input").val() }
-//     }).done(function(response) {
-//         getMessages();
-//     })
-// })
+$(".message").click(function(e) {
+    e.preventDefault();
+    $.ajax({
+        url: "?page=createdPoll",
+        method: "POST",
+        dataType: 'json',
+        data: { message: $(".sendMessage").val() }
+    }).done(function(response) {
+        // getMessages();
+    })
+})
 
 // function getMessages() {
 //     $.ajax({

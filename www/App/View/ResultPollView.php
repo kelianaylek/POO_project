@@ -18,8 +18,8 @@
 
 <div id="messages"></div>
     <form method="POST">
-        <input type="text" name="message" id="">
-        <button type="submit" name="sendMessage">Envoyer</button>
+        <input class="message" type="text" name="message" id="">
+        <button class="sendMessage" type="submit" name="sendMessage">Envoyer</button>
     </form>
 
     <a href="?page=main">Retour à l'accueil</a>

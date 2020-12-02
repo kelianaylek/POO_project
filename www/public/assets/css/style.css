@@ -39,7 +39,6 @@ h3 {
     margin-top: 5vh;
 }
 table {
-    
     font-size: 18px;
     margin-bottom: 5vh;
 }
@@ -131,5 +130,9 @@ a:not(:hover) {
     display: flex;
     justify-content: center;
     margin-top: 8vh;
+}
+table.centers {
+    display: flex;
+    justify-content: center;
 }
 

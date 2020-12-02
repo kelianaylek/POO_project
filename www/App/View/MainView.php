@@ -22,7 +22,7 @@
 
 
 <h2>Mes sondages passés :</h2>
-<table>
+<table class="centers">
         <thead>
             <tr>
                 <th>Titre du sondage</th>
@@ -52,7 +52,7 @@
 
     <h2>Les sondages en cours de mes amis :</h2>
   
-    <table>
+    <table class="centers">
         <thead>
             <tr>
                 <th>Pseudo</th>

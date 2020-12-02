@@ -133,6 +133,5 @@ a:not(:hover) {
 }
 
 table.centers {
-    display: flex;
-    justify-content: center;
+    margin: 0 auto;
 }

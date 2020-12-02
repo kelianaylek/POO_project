@@ -12,37 +12,34 @@ body {
     font-family: 'Oswald', sans-serif;
 }
 
-table {
-    margin-left: 30%;
-    font-size: 20px;
-    display: inline-table;
+.date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-tbody td:nth-child(4) {
-    font-size: 15px;
-}
-
-tbody td:nth-child(5) {
-    font-size: 15px;
-}
-
-h2 {
-    margin-top: 5%;
+h1 {
     text-align: center;
 }
 
-h3 {
+form {
     text-align: center;
 }
 
-#messages {
-    margin-top: 10%;
-}
-
-button {
+input {
     border-radius: 20px;
     background-color: var(--old-rose) !important;
     color: #fff;
     border: none;
     padding: 10px;
+}
+
+a {
+    border-radius: 20px;
+    background-color: var(--old-rose) !important;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
 }

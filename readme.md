@@ -1,23 +1,20 @@
 Notre groupe est composé de 4 personnes :
-Hugo Perrain, Matthis Blondin, Thimothé Gaultier et Raoult Severac Kélian
+Hugo Perrain, Matthis Blondin, Thimothé Gaultier et Raoult Severac Kélian.
 
-Consignes
-Par équipe de 3 vous allez devoir monter le projet suivant:
+Le site est composé de 4 utilisateurs.
+Ils sont tous amis entre eux mais peuvent être retirés/ré-ajoutés.
+Ils sont tous offline, ils deviendront online lorsqu'ils se connecteront.
+Pour passer offline, il faut qu'ils se déconnectent via le bouton de déconnexion.
+Ils ont tous des sondages de créés.
+Les utilisateurs n'ont pas encore voté pour aucun des sondages, nous vous laissons découvrir comment cela fonctionne.
+Les sondages ne comportent pas encore de messages mais vous pouvez en envoyer comme il vous semble.
 
-Un client vous demande de faire une app de sondage entre amis. Cette app de sondage est pour proposer à nos amis de nous aider dans nos choix.
+## Nos Github
 
-Exemple que vais-je manger aujourd'hui?
-1/ Japonais,
-2/ Macdo
-Le sondage aura un temps limite de réponse définit par l'auteur.
-L'idée est de partagé le lien du sondage à ses amis qui pourront répondre s'ils sont connectés.
-Une personne peut voir ses amis connectés sur le site.
-L'auteur du sondage verra au fur et à mesure des réponses les résultats s'afficher sans avoir à actualiser la page.
-Le client veut que l'utilisateur ai la possibilité d'envoyer une invitation pour le sondage par mail.
+[Kélian Raoult](https://github.com/kelianaylek)
 
-Vous aurez donc à gérer en base de données:
+[Timothée Gaultier](https://github.com/timoogo)
 
-- les utilisateurs=> leurs infos personnelles, la connexion
-- Les liens d'amis
-- les sondages
-- les réponses avec leur résultat
+[Mattthis Blondin](https://github.com/Matthis78)
+
+[Hugo Perrain](https://github.com/hug0exe)

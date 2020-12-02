@@ -17,6 +17,7 @@
             <input type="password" name="currentPassword" >
             <button type="submit" name="submitCurrentPassword">Valider</button>
         </form>
+        <a href="?page=main">Retour à l'accueil</a>
     
     </div>
 </body>

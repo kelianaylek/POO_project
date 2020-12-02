@@ -23,8 +23,6 @@
             <button type="submit" name="submitProfilChanges">Valider</button>
         </form>
         <a href="?page=main">Retour à l'accueil</a>
-
-    
     </div>
 </body>
 </html>
